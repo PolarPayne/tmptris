@@ -115,6 +115,19 @@ func drawTetromino(piece string, surface *sdl.Surface) {
 }
 
 func main() {
+
+	//fmt.Println(parseutils.EatWhitespace("    haloo!"))
+	//lhs, rhs := parseutils.SplitFromWhitespace("hola amigos")
+	//rhs = parseutils.EatWhitespace(rhs)
+	//fmt.Printf("lhs: %v\nrhs: %v\n", lhs, rhs)
+	//fmt.Println(parseutils.ReadRegexp(":= hello", ":="))
+	//num, rest, err := parseutils.ReadInt("-0x10 and this and that")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//fmt.Println(num, rest)
+	//return
+
 	pieces = board.ParseFile("data/tgm_pieces.data")
 
 	sdl.Init(sdl.INIT_EVERYTHING)
@@ -155,7 +168,7 @@ func main() {
 		surface.FillRect(&sdl.Rect{X: 0, Y: 0, W: surface.W, H: surface.H}, borderColor.Uint32())
 		surface.FillRect(&sdl.Rect{X: 10, Y: 10, W: surface.W - 20, H: surface.H - 20}, backgroundColor.Uint32())
 
-		drawTetromino("J", surface)
+		drawTetromino("O", surface)
 		// surface.FillRect(&player, playerColor.Uint32())
 
 		window.UpdateSurface()

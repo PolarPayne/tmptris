@@ -34,14 +34,14 @@ func (p pieceState) String() string {
 	return b.String()
 }
 
-type piece struct {
+type Piece struct {
 	StartState int
 	StartX     int
 	StartY     int
 	States     []pieceState
 }
 
-func (p piece) String() string {
+func (p Piece) String() string {
 	var b bytes.Buffer
 	b.WriteString(fmt.Sprintf(
 		"piece[startState=%v startX=%v startY=%v]\n",
@@ -57,7 +57,7 @@ func (p piece) String() string {
 	return b.String()
 }
 
-type Pieces map[string]piece
+type Pieces map[string]Piece
 
 /*
 ParseFile reads piece information from a file.
@@ -106,7 +106,7 @@ func ParseFile(filename string) Pieces {
 
 	for i := 0; i < amountOfPieces; i++ {
 		name := nextString()
-		thePiece := piece{}
+		thePiece := Piece{}
 		thePiece.StartState = nextInt()
 		thePiece.StartX = nextInt()
 		thePiece.StartY = nextInt()
